@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const Header = ({ accounts, onLogin, currentUser }) => {
+	console.log(currentUser);
+
 	const [username, setUsername] = useState("");
 	const [pin, setPin] = useState("");
 
@@ -14,6 +16,8 @@ const Header = ({ accounts, onLogin, currentUser }) => {
 		);
 
 		onLogin(currentAccount);
+		setUsername("");
+		setPin("");
 	};
 
 	return (
