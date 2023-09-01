@@ -71,8 +71,13 @@ function App() {
 			);
 			return newAccs;
 		});
+	};
 
-		console.log(newAccounts);
+	const handleLoan = (value) => {
+		setCurrentUser((currUser) => ({
+			...currUser,
+			movements: [...currUser.movements, value],
+		}));
 	};
 
 	return (
@@ -88,6 +93,7 @@ function App() {
 					currentUser={currentUser}
 					accounts={newAccounts}
 					onTransfer={handleTransfer}
+					onLoan={handleLoan}
 				/>
 			)}
 		</>

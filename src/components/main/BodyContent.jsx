@@ -3,7 +3,7 @@ import Movements from "./Movements";
 import Transfer from "./Transfer";
 import Loan from "./Loan";
 
-const BodyContent = ({ currentUser, accounts, onTransfer }) => {
+const BodyContent = ({ currentUser, accounts, onTransfer, onLoan }) => {
 	const [balance, setBalance] = useState(0);
 
 	const currentDate = new Date();
@@ -89,7 +89,7 @@ const BodyContent = ({ currentUser, accounts, onTransfer }) => {
 					onTransfer={onTransfer}
 					balance={balance}
 				/>
-				<Loan />
+				<Loan onLoan={onLoan} currentUser={currentUser} />
 				{/* <CloseAccount /> */}
 			</>
 
